@@ -8,7 +8,16 @@ const fetchMovieReducer = (state = null, action) => {
             return state;
     }
 }
+const fetchAllMovieReducer = (state = null, action) => {
+    switch(action.type){
+        case 'FETCH__ALL_MOVIES':
+            return action.payload;
+        default:
+            return state;
+    }
+}
 
 export default combineReducers({
-    movie: fetchMovieReducer
+    movie: fetchMovieReducer,
+    allmovies: fetchAllMovieReducer
 })
